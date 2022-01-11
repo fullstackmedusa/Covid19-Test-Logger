@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Covid Tracker- Profile</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <a href="/logout">logout</a>
+        <a href="/tests">All Tests</a>
+    </nav>
+    <div class="user-profile-table">
+        <h1>My Profile</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Vaccination Status</th>
+                    <th>Vaccine</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>
+                            <%= profile.name %>
+                        </td>
+                        <td>
+                            <%= profile.vaccination_status %>
+                        </td>
+                        <td>
+                            <%= profile.vaccine %>
+                        </td>
+                        <td><a href="/tests/<%= profile._id %>">test details</a></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
