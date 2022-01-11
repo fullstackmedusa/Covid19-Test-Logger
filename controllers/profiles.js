@@ -2,7 +2,8 @@ const User = require('../models/user');
 const Profile = require('../models/profile');
 
 module.exports = {
-    index
+    index,
+    edit,
 }
 
 function index(req, res){
@@ -13,4 +14,12 @@ function index(req, res){
         });
     });
     
+}
+function edit(req, res){
+    Profile.findOne({},function(err, profileDocument){
+        res.render("profile/edit",{
+            title: "Edit Profile",
+            profile: profileDocument,
+        });
+    });
 }

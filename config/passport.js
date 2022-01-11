@@ -35,7 +35,7 @@ passport.use(new GoogleStrategy({
           if (err) return cb(err);
           return cb(null, newUser);
         });
-        // creating profile page for user
+        // creating profile for user
         const newProfile = new Profile({
           name: newUser.name,
           user_id: newUser._id,
