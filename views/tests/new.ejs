@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>My Covid Tests</title>
+</head>
+
+<body>
+  <nav>
+    <a href='/profile'>My Profile</a> |
+    <!-- <a href='/flights/new'>Add Flight</a>
+    <a href="/flights/<%=flight._id%>/tickets/new">New Ticket</a>    <---- this is the kind of thing we will add on the page later --> 
+
+  </nav>
+  <h2>Add Test</h2>
+  <form id="add-test-form" method="POST" action="/profile/<%=profile._id%>/tests">
+
+<label>
+    Date Tested
+    <input type="datetime-local" value="<%= dateTested.slice(0, 16) %>" name="date_tested">
+</label>
+<br>
+    <label>Test Type:<select name="test_type">
+        <option value="PCR">PCR</option>
+        <option value="Rapid Antigen">Rapid Antigen</option>
+    </select></label>
+    <br>
+    
+    <label>Result:<select name="test_result">
+        <option value="Positive">Positive</option>
+        <option value="Negative">Negative</option>
+    </select></label>
+    <br>
+    <br>
+    <input type="submit" value="Add Ticket" />
+  </form>
+  <input type="submit" value="Add test" />
+</body>
+
+</html>
