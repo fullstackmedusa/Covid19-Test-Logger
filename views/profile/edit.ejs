@@ -12,7 +12,7 @@
         <a href="/tests">All Tests</a>
     </nav>
     <h1>Edit Profile</h1>
-    <form action="/profile?_method=PUT" method="POST">
+    <form action="/profile/edit/<%= profile._id %>?_method=PUT" method="POST">
         <label>Vaccine<select name="vaccine">
             <option value="N/A">N/A</option>
             <option value="BioNTech Pfizer">BioNTech Pfizer</option>
@@ -20,10 +20,12 @@
             <option value="Johnson & Johnson">Johnson & Johnson</option>
             <option value="Oxford-AstraZeneca">Oxford-AstraZeneca</option>
         </select></label>
+    <label>Vaccination Status<select name="vaccination_status">
+        <option value="Unvaccinated">Unvaccinated</option>
+        <option value="Vaccinated">Vaccinated</option>
+        </select></label>
+        <input type="submit" value="Save Changes">
     </form>
-    <div>
-        <a href="/profile">Save Changes</a>
-    </div>
 </body>
 
 </html>

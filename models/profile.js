@@ -13,8 +13,10 @@ const profileSchema = new Schema (
         required: true,
      }, 
     vaccination_status: {
-        type: Boolean,
-        default: false,
+        type: String,
+        enum: ["Vaccinated", "Unvaccinated"],
+        default: "Unvaccinated",
+        required: true,
     },
     vaccine: {
         type: String,
