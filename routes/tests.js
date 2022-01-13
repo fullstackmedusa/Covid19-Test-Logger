@@ -4,6 +4,8 @@ const testsCtrl = require("../controllers/tests");
 
 router.post("/profile", testsCtrl.create);
 
-router.delete("/profile/tests/:testsId", testsCtrl.delete);
+
+router.get("/new",testsCtrl.new)
+
 
 module.exports = router;

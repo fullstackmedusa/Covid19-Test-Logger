@@ -33,13 +33,13 @@
                     <td>
                         <%= profile.vaccine %>
                     </td>
-                    <td><a href="/tests/<%= profile._id %>">test details</a></td>
+                    <td><a href="profile/<%= profile._id %>">test details</a></td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div>
-     <a href="/profile/tests/new">Add new test/a>
+     <a href="/tests/new">Add new test</a>
     </div>
     <br>
     <div>COVID-19 Tests:</div>
@@ -48,17 +48,13 @@
         <%tests.forEach(function (t){%>
             <div class="test-info">Date Tested<%=t.date_tested%>
             </div>
-            <div class="ticket-info">Test Type<%=t.test_type%>
-            </div>
-            <div class="test-info">Result<%=t.test_result%>
+            <div class="test-info">Test Type<%=t.test_type%>
             </div>
             <%})%>
                 <% } else { %>
                     <div>No tests yet</div>
-                    <form id="delete-test-form" action="/profile/tests/<%=t._id%>?_method=DELETE" method="POST">
-                        <button type="submit">Delete Test</button>
-                    </form>
-                    <%}%>
+                    
+                    <%} %>
 
 
                         <div>

@@ -2,6 +2,31 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
+
+const testSchema = new Schema(
+    {
+        user_id: {
+            type: Schema.Types.ObjectId,
+            ref: "User"
+        },
+        test_type: {
+            type: String,
+            enum: ["PCP", "Rapid Antigen"],
+            default: "PCP",
+            required: true,
+        },
+        date_tested: {
+            type: Date,
+            default: Date.now,
+        },
+        result: {
+            type: String,
+            enum: ["Positive", "Negative"],
+            default: "Negative",
+            required: true
+        }
+    })
+
 const profileSchema = new Schema (
     {
     user_id: {
@@ -24,8 +49,14 @@ const profileSchema = new Schema (
         default: "N/A",
         required: true,
 
-    }
+    },
+    tests:[testSchema]
+    
 })
 
-module.exports = mongoose.model("Profile", profileSchema);
+
+module.exports = {
+    Profile: mongoose.model("Profile", profileSchema), 
+    Test: mongoose.model("Test",testSchema)
+};
 

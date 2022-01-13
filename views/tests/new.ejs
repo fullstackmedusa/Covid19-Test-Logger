@@ -10,19 +10,13 @@
 </head>
 
 <body>
-  <nav>
-    <a href='/profile'>My Profile</a> |
-    <!-- <a href='/flights/new'>Add Flight</a>
-    <a href="/flights/<%=flight._id%>/tickets/new">New Ticket</a>    <---- this is the kind of thing we will add on the page later --> 
 
-  </nav>
+
+
   <h2>Add Test</h2>
-  <form id="add-test-form" method="POST" action="/profile/<%=profile._id%>/tests">
+  <form id="add-test-form" method="POST" action="/profile">
 
-<label>
-    Date Tested
-    <input type="datetime-local" value="<%= dateTested.slice(0, 16) %>" name="date_tested">
-</label>
+
 <br>
     <label>Test Type:<select name="test_type">
         <option value="PCR">PCR</option>
@@ -35,10 +29,9 @@
         <option value="Negative">Negative</option>
     </select></label>
     <br>
-    <br>
-    <input type="submit" value="Add Ticket" />
+    <input type="submit" value="Add test" />
   </form>
-  <input type="submit" value="Add test" />
+  
 </body>
 
 </html>
