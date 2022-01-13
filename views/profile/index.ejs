@@ -33,7 +33,6 @@
                     <td>
                         <%= profile.vaccine %>
                     </td>
-                    <td><a href="profile/<%= profile._id %>">test details</a></td>
                 </tr>
             </tbody>
         </table>
@@ -48,8 +47,7 @@
         <%tests.forEach(function (t){%>
             <div class="test-info">Date Tested<%=t.date_tested%>
             </div>
-            <div class="test-info">Test Type<%=t.test_type%>
-            </div>
+            <a href="/tests/<%=t._id%>/show">Test Details</a>
             <%})%>
                 <% } else { %>
                     <div>No tests yet</div>

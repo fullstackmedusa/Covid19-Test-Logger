@@ -1,9 +1,9 @@
-const Profile = require("../models/profile");
-const Test = require("../models/profile");
+const {Profile, Test} = require('../models/profile');
 
 module.exports = {
     create,
     new: newTest,
+    show,
   };
 
   function create(req, res){
@@ -13,16 +13,27 @@ module.exports = {
 	// what the user filled out
 	console.log(req.body, " <- req.body in the create function in my testsCtrl")
 
-    Test.create(req.params.id, req.body, {new: true}, function(err, test) {
+    Test.create({test_result:req.body.test_result, test_type: req.body.test_type, user_id:req.user._id}, function(err, test) {
         test.save();
-        res.redirect(`/profile`);
+        res.redirect("/profile");
 	})
 };
 
+
   function newTest(req, res) {
-        res.render("/tests/new", {
+        res.render("tests/new", {
             title: "New Test",
         }
         )};
 
+        function show(req, res) {
+              Test.findById(req.params.id , function (err, test) {
+                res.render('tests/show', {
+                  test,
+                  title: "test details"
+                });
+              });
+            };
+        
+          
 

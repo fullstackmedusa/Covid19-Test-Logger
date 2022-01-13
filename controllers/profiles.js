@@ -7,7 +7,6 @@ module.exports = {
     edit,
     updateProfile,
     create: createProfile,
-    show,
 }
 
 function index(req, res){
@@ -56,25 +55,3 @@ function updateProfile(req,res){
     })
 }
 
-function show(req, res) {
-    // console.log(req.params, " < -req.params in the show route")
-    const newTest = new Test();
-    //   obtain the default date
-    const dt = newTest.date_tested;
-    // format the date for the value attribute of the input
-    // timezone offset of default date
-    let timezoneOffset = dt.getTimezoneOffset() * 60000;
-    // subtract offset from the default date
-    const dateTested = new Date(dt - timezoneOffset).toISOString();
-    // render local departure date
-      Test.find({ profile: profile._id }, function (err, test) {
-        res.render('profile/show', {
-          profile,
-          test,
-          dateTested,
-          title: "test details"
-        });
-      });
-    };
-
-  
