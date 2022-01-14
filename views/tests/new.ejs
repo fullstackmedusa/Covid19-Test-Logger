@@ -10,33 +10,38 @@
 </head>
 
 <body>
+  <div class="topnav">
+    <a class="active" href="/profile">Home</a>
+    <a id="logout" href="/logout">logout</a>
+  </div>
 
 
 
-  <h2>Add Test</h2>
-  <form id="add-test-form" method="POST" action="/tests/<%= profile._id %>">
+  <div class="main-body">
+    <h1>Add Test</h1>
+    <form id="add-test-form" method="POST" action="/tests/<%= profile._id %>">
 
 
-<br>
-    <label>Test Type:<select name="test_type">
-        <option value="PCR">PCR</option>
-        <option value="Rapid Antigen">Rapid Antigen</option>
-    </select></label>
-    <br>
-    
-    <label>Result:<select name="test_result">
-        <option value="Positive">Positive</option>
-        <option value="Negative">Negative</option>
-    </select></label>
-    <br>
-    <label>
-      Date Tested
-      <input type="datetime-local" value="<%= testDate.slice(0, 16) %>" name="date_tested">
-    </label><br>
-    <br>
-    <input type="submit" value="Add test" />
-  </form>
-  
+      <br>
+      <label>Test Type:<select name="test_type">
+          <option value="PCR">PCR</option>
+          <option value="Rapid Antigen">Rapid Antigen</option>
+        </select></label>
+      <br>
+
+      <label>Result:<select name="test_result">
+          <option value="Positive">Positive</option>
+          <option value="Negative">Negative</option>
+        </select></label>
+      <br>
+      <label>
+        Date Tested
+        <input type="datetime-local" value="<%= testDate.slice(0, 16) %>" name="date_tested">
+      </label><br>
+      <br>
+      <input type="submit" value="Add test" />
+    </form>
+  </div>
 </body>
 
 </html>

@@ -10,37 +10,43 @@
 </head>
 
 <body>
-  <section id="show">
-    <table>
-      <thead>
-        <tr>
-          <th>Date tested:</th>
-          <th>Test type:</th>
-          <th>Result:</th>
+  <div class="topnav">
+    <a class="active" href="/profile">Home</a>
+    <a id="logout" href="/logout">logout</a>
+  </div>
+  <div class="main-body">
+    <h1>Test Details</h1>
+    <section id="show">
+      <table>
+        <thead>
+          <tr>
+            <th>Date tested:</th>
+            <th>Test type:</th>
+            <th>Result:</th>
 
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <%=test.date_tested%>
-          </td>
-          <td>
-            <%=test.test_type%>
-          </td>
-          <td>
-            <%=test.result%>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <%=test.date_tested%>
+            </td>
+            <td>
+              <%=test.test_type%>
+            </td>
+            <td>
+              <%=test.result%>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </br>
+    </section>
     </br>
-  </section>
-  </br>
-  <form id="delete-test-form" action="/tests/<%=test._id%>?_method=DELETE" method="POST" >
-    <button type="submit">delete test</button>
-  </form>
+    <form id="delete-test-form" action="/tests/<%=test._id%>?_method=DELETE" method="POST">
+      <button type="submit">delete test</button>
+    </form>
+  </div>
 </body>
 
 </html>
-

@@ -7,57 +7,62 @@
 </head>
 
 <body>
-    <nav class="nav-bar">
-        <a href="/logout">logout</a>
-        <a href="/tests">All Tests</a>
-    </nav>
-    <div class="user-profile-table">
-        <h1>My Profile</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Vaccination Status</th>
-                    <th>Vaccine</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <%= profile.name %>
-                    </td>
-                    <td>
-                        <%= profile.vaccination_status %>
-                    </td>
-                    <td>
-                        <%= profile.vaccine %>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="topnav">
+        <a class="active" href="/profile">Home</a>
+        <a id="logout" href="/logout">logout</a>
     </div>
-    <div>
-     <a href="/tests/new/<%=profile._id%>">Add new test</a>
-    </div>
-    <br>
-    <div>COVID-19 Tests:</div>
-    </br>
-    <% if (profile.tests.length) { %>
-        <%profile.tests.forEach(function (t){%>
-            <div class="test-info">Date Tested<%=t.date_tested%>
-            </div>
-            <a href="/tests/<%=t._id%>/show">Test Details</a>
-            <%})%>
-                <% } else { %>
-                    <div>No tests yet</div>
-                    
-                    <%} %>
+    <div class="main-body">
+        <div class="user-profile-table">
+            <h1>My Profile</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th id="column">Name </th>
+                        <th id="column">Vaccination Status</th>
+                        <th id="column">Vaccine</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <%= profile.name %>
+                        </td>
+                        <td>
+                            <%= profile.vaccination_status %>
+                        </td>
+                        <td>
+                            <%= profile.vaccine %>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <a class="button" id="edit-profile" href="/profile/edit/<%=profile._id%>">Update Vaccination Status</a>
+        </div>
+        <br>
+        <p><strong>COVID-19 Tests:</strong></p>
+        <div>
+            <a class="button" id="new-test-button" href="/tests/new/<%=profile._id%>">Add new test</a>
+        </div>
+        <br>
+        <% if (profile.tests.length) { %>
+            <%profile.tests.forEach(function (t){%>
+                <div class="test-info"><strong> Date Tested:</strong>
+                    <%=t.date_tested%>
+                </div>
+                <a id="test-details" href="/tests/<%=t._id%>/show">test details</a>
+                <br>
+                <%})%>
+                    <% } else { %>
+                        <div>No tests yet</div>
+
+                        <%} %>
 
 
-                        <div>
-                            <a href="/profile/edit/<%=profile._id%>">edit profile</a>
-                        </div>
+
+    </div>
 </body>
 
 </html>
