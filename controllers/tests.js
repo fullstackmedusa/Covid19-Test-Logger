@@ -59,9 +59,9 @@ function newTest(req, res) {
 };
 
 function show(req, res) {
-    Profile.findOne({'tests._id':req.params.id}, function (err, profile) {
+    Profile.findOne({'tests._id':req.params.id,user_id: req.user._id}, function (err, profile) {
         profile.tests.find(function(test){
-            test._id ===req.params.id;
+            test._id === req.params.id;
         res.render('tests/show', {
             test,
             title: "test details"
@@ -74,7 +74,7 @@ function show(req, res) {
 
 function deleteTest(req, res, next) {
     console.log("testing delete fctn")
-    Profile.findOne({"tests._id":req.params.id}, function (err, profileDoc) {
+    Profile.findOne({"tests._id":req.params.id, user_id: req.user._id}, function (err, profileDoc) {
         console.log(profileDoc, "<--- profileDoc");
         profileDoc.tests.pull({_id:req.params.id});
         

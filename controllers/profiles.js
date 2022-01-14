@@ -9,12 +9,13 @@ module.exports = {
     create: createProfile,
 }
 
+
 function index(req, res){
     console.log(req.user);
-    Profile.findById(req.user._id,function(err, profileDocument){
+    Profile.findOne({user_id:req.user._id},function(err, profileDocument){
         console.log(profileDocument, "<---- profile document");
         if (!profileDocument){
-            Profile.create({name:req.user.name, _id:req.user._id},function(err, profileDoc){
+            Profile.create({name:req.user.name, user_id:req.user._id},function(err, profileDoc){
                 console.log(profileDoc, "<--profile doc in create")
                 res.render("profile/index", {
                     title: "Tests",
