@@ -7,8 +7,8 @@ const testSchema = new Schema(
     {
         test_type: {
             type: String,
-            enum: ["PCP", "Rapid Antigen"],
-            default: "PCP",
+            enum: ["PCR", "Rapid Antigen"],
+            default: "PCR",
             required: true,
         },
         date_tested: {
