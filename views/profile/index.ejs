@@ -38,13 +38,13 @@
         </table>
     </div>
     <div>
-     <a href="/tests/new">Add new test</a>
+     <a href="/tests/new/<%=profile._id%>">Add new test</a>
     </div>
     <br>
     <div>COVID-19 Tests:</div>
     </br>
-    <% if (tests.length) { %>
-        <%tests.forEach(function (t){%>
+    <% if (profile.tests.length) { %>
+        <%profile.tests.forEach(function (t){%>
             <div class="test-info">Date Tested<%=t.date_tested%>
             </div>
             <a href="/tests/<%=t._id%>/show">Test Details</a>

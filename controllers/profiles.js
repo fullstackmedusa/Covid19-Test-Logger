@@ -24,15 +24,13 @@ function index(req, res){
             })  
             return 
         }
-        Test.find({user_id:profileDocument._id}, function(err, testDocuments){
             res.render("profile/index", {
                 title: "Tests",
-                tests: testDocuments,
                 profile: profileDocument,
             })
         })
-    });
-}
+    };
+
 
 function edit(req, res){
     Profile.findById(req.params.id, function(err, profileDocument) {

@@ -5,10 +5,6 @@ const Schema = mongoose.Schema;
 
 const testSchema = new Schema(
     {
-        user_id: {
-            type: Schema.Types.ObjectId,
-            ref: "User"
-        },
         test_type: {
             type: String,
             enum: ["PCP", "Rapid Antigen"],
