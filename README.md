@@ -1,34 +1,51 @@
-# passport-boilerplate
+## COVID19 Test Logger
+
+Keep all of your COVID19 tests and test results in one place. This COVID 19 test logger helps you keep a record of all of your COVID19 tests and results. 
+___
+
+![landing page](https://i.imgur.com/kowxiIq.png)
+Landing page. Login with your Google account
 
 
-This is your passport boilerplate.
+![home page](https://i.imgur.com/lN25oDF.png)
+Homepage/profile page. Your name, vaccination status, and a list of tests by date
 
-## Setup 
+![update vaccination status](https://i.imgur.com/QIGrEfE.png)
+Edit your profile by updating your vaccination status
 
-1. Clone the repo
-2. Rename the folder to your Project
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+![updated profile](https://i.imgur.com/K1r4xQL.png)
+updated vaccination status
+
+![add a test](https://i.imgur.com/30ybD7c.png)
+Add a new test log. Select date tested, test type, and result.
+
+![test detail page](https://i.imgur.com/3AT8udt.png)
+Click on test details link to see result of that test. Delete a test from this page as well.
+___
+
+### The technologies I used to build this app are:
+- JavaScript
+- EJS
+- Node.js
+- Express
+- Mongoose for mongoDB
+- Google OAuth
+- Heroku
+
+___
+
+### Getting started:
+
+#### Click the link to see planning, wireframes, ERD, and user stories [this Trello board](https://trello.com/b/kB3AKDRF/covid-tracker)
 
 
-#### Setup your git repo
-1. in the project root `git init`
-2. `git add .` to add all the starter code
-3. `git commit -m "setup boilerplate"` 
-4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-5. copy the remote address
-6. In your terminal add the remote `git remote add origin yourGithubRepo'sAddressGoesHere`
-7. `git pull origin master` If a screen pulls up asking you to do something just press `:q` and then `enter` (thats vim btw :) )
-8. `git push origin master`
+Login to create your personal covid test logs. Keep track of all of your covid19 tests and results in one place.
 
-#### Setup your login
+#### Launch the app and get listing [here](https://covid-tests-log.herokuapp.com/)
 
-0. Setup your database connection string
-1. Then Setup Your User Model, 
-2. Follow the steps from the lesson plan to get your Google login credentials for your `.env` file (create the file if you haven't), or you can just copy the ones from earlier if you want to reuse them.
-3. Setup the Code in your config passport 
-4. Setup your callback routes in your `routes/index`
-5. Setup a view and test your login!
+___
 
-#### Make a commit 
-
-```git commit -m "setup up oauth and User Model"```
+### Planned future enhancements:
+- Adding more pages for logging symptoms
+- A running count of days ill if a positive test is submitted
+- overall nicer user interface with more responsive design
