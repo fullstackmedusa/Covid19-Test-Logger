@@ -41,7 +41,7 @@ ___
 
 Login to create your personal covid test logs. Keep track of all of your covid19 tests and results in one place.
 
-#### Launch the app and get listing [here](https://covid-tests-log.herokuapp.com/)
+#### Launch the app and try it yourself [here](https://covid-tests-log.herokuapp.com/)
 
 ___
 
