@@ -36,7 +36,7 @@ ___
 
 ### Getting started:
 
-#### Click the link to see planning, wireframes, ERD, and user stories [this Trello board](https://trello.com/b/kB3AKDRF/covid-tracker)
+#### Click the link to see planning, wireframes, ERD, and user stories [here](https://trello.com/b/kB3AKDRF/covid-tracker)
 
 
 Login to create your personal covid test logs. Keep track of all of your covid19 tests and results in one place.
