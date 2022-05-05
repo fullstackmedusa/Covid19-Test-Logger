@@ -3,24 +3,21 @@
 Keep all of your COVID19 tests and test results in one place. This COVID 19 test logger helps you keep a record of all of your COVID19 tests and results. 
 ___
 
-![landing page](https://i.imgur.com/kowxiIq.png)
+![landing page](https://i.imgur.com/E6k7dFu.png)
 Landing page. Login with your Google account
 
 
-![home page](https://i.imgur.com/lN25oDF.png)
+![home page](https://i.imgur.com/TKRjpWq.png)
 Homepage/profile page. Your name, vaccination status, and a list of tests by date
 
-![update vaccination status](https://i.imgur.com/QIGrEfE.png)
-Edit your profile by updating your vaccination status
 
-![updated profile](https://i.imgur.com/K1r4xQL.png)
-updated vaccination status
-
-![add a test](https://i.imgur.com/30ybD7c.png)
+![add a test](https://i.imgur.com/srbByVH.png)
 Add a new test log. Select date tested, test type, and result.
 
-![test detail page](https://i.imgur.com/3AT8udt.png)
+![test detail page](https://i.imgur.com/8utnjbA.png)
 Click on test details link to see result of that test. Delete a test from this page as well.
+
+*** changes are currently being made to the update profile page ***
 ___
 
 ### The technologies I used to build this app are:
