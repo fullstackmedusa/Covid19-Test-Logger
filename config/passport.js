@@ -2,7 +2,7 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 //Require your User Model here!
 const User = require("../models/user");
-const Profile = require("../models/profile");
+const { Profile } = require("../models/profile");
 
 // configuring Passport!
 passport.use(new GoogleStrategy({
@@ -35,11 +35,11 @@ passport.use(new GoogleStrategy({
           if (err) return cb(err);
           return cb(null, newUser);
         });
-        // creating profile for user
+        // creating profile for user I think there is an error bc you cant find the profile name if you dont create on for the user before creating the user
         const newProfile = new Profile({
           name: newUser.name,
           user_id: newUser._id,
-          })
+          });
           newProfile.save(function (err) {
             if (err) console.log('error', err);
         })

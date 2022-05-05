@@ -6,33 +6,63 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <title>My Covid Tests</title>
 </head>
 
 <body>
-  <div class="topnav">
-    <a class="active" href="/profile">Home</a>
-    <a id="logout" href="/logout">logout</a>
-  </div>
+  <header class="navbar-fixed">
+    <nav class="#f5f5f5 grey lighten-4">
+      <div class="nav-wrapper">
+        <ul>
+          <li><a href="/profile" class="left brand-logo"><img src="../../images/testslogo.png"
+            alt="Home Logo"  id="app-logo"style="width:60px;height:60px;"></a></li>
+        </ul>
+        <ul class="right">
+          <li><a id="logout-button" href="/logout"> <span class="grey-text text-darken-2">Logout</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    </header>
+    <!-- header -->
 
 
-
+<main>
   <div class="main-body">
     <h1>Add Test</h1>
     <form id="add-test-form" method="POST" action="/tests/<%= profile._id %>">
 
 
       <br>
-      <label>Test Type:<select name="test_type">
-          <option value="PCR">PCR</option>
-          <option value="Rapid Antigen">Rapid Antigen</option>
-        </select></label>
+      <p>Test Type:</p>
+      <p>
+        <label> 
+          <input name="PCR" type="radio" />
+          <span>PCR</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input name="Rapid Antigen" type="radio" />
+          <span>Rapid Antigen</span>
+        </label>
+      </p>
+    
       <br>
-
-      <label>Result:<select name="test_result">
-          <option value="Positive">Positive</option>
-          <option value="Negative">Negative</option>
-        </select></label>
+      <p>Result:</p>
+      <p>
+        <label>
+          <input name="Positive" type="radio"  />
+          <span>Positive</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input name="Negative" type="radio" />
+          <span>Negative</span>
+        </label>
+      </p>
       <br>
       <label>
         Date Tested
@@ -42,6 +72,13 @@
       <input type="submit" value="Add test" />
     </form>
   </div>
+</main>
+<!-- footer -->
+<footer class="page-footer #f5f5f5 grey lighten-4">
+  <div class="right #f5f5f5 grey">All Rights Reserved, &copy; 2021 Aloberries Inc. &nbsp;</div>
+</footer>
+
+<!-- footer -->
 </body>
 
 </html>

@@ -4,16 +4,29 @@
 <head>
     <title> Covid Tracker- Profile</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
-    <div class="topnav">
-        <a class="active" href="/profile">Home</a>
-        <a id="logout" href="/logout">logout</a>
-    </div>
-
+    <header class="navbar-fixed">
+        <nav class="#f5f5f5 grey lighten-4">
+          <div class="nav-wrapper">
+            <ul>
+              <li><a href="/profile" class="left brand-logo"><img src="../../images/testslogo.png"
+                alt="Home Logo"  id="app-logo"style="width:60px;height:60px;"></a></li>
+            </ul>
+            <ul class="right">
+              <li><a id="logout-button" href="/logout"> <span class="grey-text text-darken-2">Logout</span></a></li>
+            </ul>
+          </div>
+        </nav>
+        </header>
+        <!-- header -->
+<main>
     <div class="main-body">
         <h1>Edit Profile</h1>
+        <div class="edit">
         <form action="/profile/edit/<%= profile._id %>?_method=PUT" method="POST">
             <label id="column">Vaccine: <select name="vaccine">
                     <option value="N/A">N/A</option>
@@ -26,9 +39,17 @@
                     <option value="Unvaccinated">Unvaccinated</option>
                     <option value="Vaccinated">Vaccinated</option>
                 </select></label>
+                </div>
             <input id="save-changes" type="submit" value="Save Changes">
         </form>
     </div>
+</main>
+<!-- footer -->
+<footer class="page-footer #f5f5f5 grey lighten-4">
+    <div class="right #f5f5f5 grey">All Rights Reserved, &copy; 2021 Aloberries Inc. &nbsp;</div>
+  </footer>
+  
+  <!-- footer -->
 </body>
 
 </html>

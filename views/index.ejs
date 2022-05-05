@@ -7,16 +7,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Covid Tracker - Login with Google</title>
   <link rel="stylesheet" href="stylesheets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
+  <!-- header -->
+  <header class="navbar-fixed">
+    <nav class="#f5f5f5 grey lighten-4">
+      <div class="nav-wrapper">
+        <ul>
+          <li><a href="/" class="left brand-logo"><img src="images/testslogo.png"
+            alt="Home Logo"  id="app-logo"style="width:60px;height:60px;"></a></li>
+        </ul>
+        <ul class="right">
+          <li><a id="login-button" href="/auth/google"><img src="images/google.png"
+            alt="Google Login"  id="google-logo"style="width:160px;height:35px;"></a></li>
+        </ul>
+      </div>
+    </nav>
+    </header>
+    <!-- header -->
+    <!-- body content -->
+<main>
   <div class=landing-page-body>
-    <div id="covid19">COVID-19</div>
-    <div id="test-logger"> Test Logger</span></div>
-    <p class="login-message">Login with Google</p>
-    <div class="login-button"><a href="/auth/google" id="login-link"><img src="https://i.imgur.com/JO1JT3O.png"
-          alt="Google Login" style="width:50px;height:50px;" id="google-logo"></a></div>
+    <div class="landing-logo" ><img src ="images/pcr.png" id="test-img"></div>
+    <div id="covid19">COVID-19 Logger</div>
+    <div id="test-logger"> All of your test results. All in one place.</span>
+  </div>
+  </div>
+</main>
+<!-- body content -->
 
+<!-- footer -->
+<footer class="page-footer #f5f5f5 grey lighten-4">
+  <div class="right #f5f5f5 grey">All Rights Reserved, &copy; 2021 Aloberries Inc. &nbsp;</div>
+</footer>
+
+<!-- footer -->
 </body>
 
 </html>

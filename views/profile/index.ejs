@@ -4,13 +4,36 @@
 <head>
     <title> Covid Tracker- Profile</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
-    <div class="topnav">
-        <a class="active" href="/profile">Home</a>
-        <a id="logout" href="/logout">logout</a>
-    </div>
+     <!-- header -->
+  <header class="navbar-fixed">
+    <nav class="#f5f5f5 grey lighten-4">
+      <div class="nav-wrapper">
+        <ul>
+          <li><a href="/profile" class="left brand-logo"><img src="images/testslogo.png"
+            alt="Home Logo"  id="app-logo"style="width:60px;height:60px;"></a></li>
+        </ul>
+        
+        <ul class="right">
+            <li><% if (user) { %>
+                <span class="blue-text text-darken-2">Hi <%= user.name %> </span>
+                
+              <% } else { %>
+                <a ></a>
+              <% } %> </li>
+              
+          <li><a id="logout-button" href="/logout"> <span class="grey-text text-darken-2">Logout</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    </header>
+    <!-- header -->
+    <main>
+  
     <div class="main-body">
         <div class="user-profile-table">
             <h1>My Profile</h1>
@@ -49,9 +72,18 @@
         <br>
         <% if (profile.tests.length) { %>
             <%profile.tests.forEach(function (t){%>
+                
+            <!-- This is a card test -->
+            
+           
+
+            <!-- This is a card test -->
+
                 <div class="test-info"><strong> Date Tested:</strong>
                     <%=t.date_tested%>
                 </div>
+
+
                 <a id="test-details" href="/tests/<%=t._id%>/show">test details</a>
                 <br>
                 <%})%>
@@ -63,6 +95,13 @@
 
 
     </div>
+</main>
+<!-- footer -->
+<footer class="page-footer #f5f5f5 grey lighten-4">
+    <div class="right #f5f5f5 grey">All Rights Reserved, &copy; 2021 Aloberries Inc. &nbsp;</div>
+  </footer>
+  
+  <!-- footer -->
 </body>
 
 </html>
